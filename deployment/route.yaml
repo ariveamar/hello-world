@@ -1,12 +1,12 @@
 apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
-  name: qod
-  namespace: qod
+  name: hello-world
+  namespace: hello-world
 spec:
   path: /
   to:
     kind: Service
-    name: qod-web
+    name: hello-world
   port:
-    targetPort: http
+    targetPort: 9000
