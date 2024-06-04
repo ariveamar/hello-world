@@ -1,28 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: qod-web
+  name: hello-world
   labels:
-    app: qod-web
+    app: hello-world
     tier: ui
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: qod-web
+      app: hello-world
   template:
     metadata:
       labels:
-        app: qod-web
+        app: hello-world
     spec:
       containers:
-        - name: qod-web
-          image: quay.io/arief_amarullah/qod-web:latest
+        - name: hello-world
+          image: quay.io/arief_amarullah/hello-world:latest
           imagePullPolicy: Always
           ports:
             - name: http
-              containerPort: 8080
+              containerPort: 9000
               protocol: TCP
-          env:
-            - name: QOD_API_URL
-              value: "http://qod-api:8080"
